@@ -4,31 +4,24 @@ const ProductTag = require("./ProductTag");
 const Tag = require("./Tag");
 
 Category.hasMany(Product, {
-  through: {
-    model: Product,
-    foreignKey: "category_id",
-    //unique: true or false?
-  },
+  foreignKey: "category_id",
 });
 
 Product.belongsTo(Category, {
-  through: {
-    model: Category,
-    foreignKey: "category_id",
-  },
+  foreignKey: "category_id",
 });
 
 Product.belongsToMany(Tag, {
   through: {
     model: ProductTag,
-    foreignKey: "product_tag",
+    foreignKey: "product_id",
   },
 });
 
 Tag.belongsToMany(Product, {
   through: {
     model: ProductTag,
-    foreignKey: "product_tag",
+    foreignKey: "tag_id",
   },
 });
 

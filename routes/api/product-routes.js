@@ -13,12 +13,13 @@ router.get("/", async (req, res) => {
           model: Category,
           through: "category_id",
           model: ProductTag,
-          through: "product-tag",
+          through: "tag_id",
         },
       ],
     });
     res.status(200).json(categoryData);
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -46,6 +47,7 @@ router.get("/:id", async (req, res) => {
 
     res.status(200).json(productData);
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -119,7 +121,7 @@ router.put("/:id", (req, res) => {
     })
     .then((updatedProductTags) => res.json(updatedProductTags))
     .catch((err) => {
-      // console.log(err);
+      console.log(err);
       res.status(400).json(err);
     });
 });
@@ -140,6 +142,7 @@ router.delete("/:id", async (req, res) => {
 
     res.status(200).json(productData);
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
