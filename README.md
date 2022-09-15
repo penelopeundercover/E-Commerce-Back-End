@@ -11,3 +11,4 @@ The purpose is to manage inventory for an e-commerce site. While building this b
 -Enter node npm start to start the server.
 
 ## ##Usage
+https://drive.google.com/file/d/14SLoQAmiovWp8f0yLncQZY5oWFUM4P2t/preview
